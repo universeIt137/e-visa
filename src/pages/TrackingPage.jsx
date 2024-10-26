@@ -28,7 +28,14 @@ const TrackingPage = () => {
         const isVerified = nominees.some(item => item.verification === trackNo);
         console.log(trackNo);
         if (isVerified) {
-            Swal.fire(`Application ${trackNo} is in status "Approved and printed/generated"`);
+            Swal.fire({
+                title: `Application #${trackNo} is in status "Approved and printed/generated"!`,
+                
+                confirmButtonText: 'OK',
+                customClass: {
+                  confirmButton: 'swal-button-red' // Add custom class for the button
+                }
+              });
         } else {
             setShow(true)
         }
